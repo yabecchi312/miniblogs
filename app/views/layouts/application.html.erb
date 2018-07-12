@@ -6,9 +6,42 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
+    <style type="text/css" href="./style.css"></style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+  </head>
   <body>
+    <nav class="blue accent-4">
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo">Blog</a>
+        <% if user_signed_in? %>
+          <div class="user_nav grid-6">
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><span>ユーザー名:<%= current_user.nickname %></span></li>
+                <li><a href="/users/<%= current_user.id %>">マイページ</a></li>
+                <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+                <li><a class="post" href="/products/new">投稿する</a></li>
+              </ul>
+          </div>
+        <% else %>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><%= link_to "ログイン", new_user_session_path, :class => 'post' %></li>
+            <li><%= link_to "新規登録", new_user_registration_path, :class => 'post' %></li>
+            <li><a href="/products/new">投稿する</a></li>
+          </ul>
+        <% end %>
+      </div>
+    </nav>
+  <script type="text/javascript" src="./app.js"></script>
+  </body>
+</html>
     <%= yield %>
   </body>
 </html>

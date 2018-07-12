@@ -1,0 +1,13 @@
+
+<div class="contents row" >
+    <div class="row">
+    <div class="col s12 m6">
+      <p><%= @nickname %>さんの投稿一覧</p>
+      <div class="card light-blue lighten-2">
+      <% @products.each do |product| %>
+        <%= render partial: "products/product", locals: { product: product } %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

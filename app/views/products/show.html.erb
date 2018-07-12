@@ -1,0 +1,17 @@
+<div class="contents row" >
+    <div class="row">
+    <div class="col s12 m6">
+      <div class="more">
+      <div class="card light-blue lighten-2">
+        <div class="card-contents black-text">
+          <span class="card-title"><%= @product.title %></span>
+          <p><%= @product.text %></p>
+        </div>
+        <% if user_signed_in? && current_user.id == @product.user_id %>
+            <%= link_to '更新する', "/products/#{@product.id}/edit", method: :get, class:"waves-effect waves-light btn" %>
+            <%= link_to '削除する', "/products/#{@product.id}", method: :delete, class:"waves-effect waves-light btn" %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>
