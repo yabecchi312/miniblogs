@@ -1,0 +1,12 @@
+<div class="card-content black-text">
+  <p>投稿者:<%= product.user.nickname %></p>
+  <span class="card-title"><%= product.title %></span>
+  <p><%= product.text %></p>
+</div>
+<div class="card-action">
+<%= link_to "詳細", product_path(product.id), method: :get, class:"waves-effect waves-light btn" %>
+  <% if user_signed_in? && current_user.id == product.user_id %>
+    <%= link_to '更新する', "/products/#{product.id}/edit", method: :get, class:"waves-effect waves-light btn" %>
+    <%= link_to '削除する', "/products/#{product.id}", method: :delete, class:"waves-effect waves-light btn" %>
+  <% end %>
+</div>

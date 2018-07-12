@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
+
+.col  {
+  margin:0 350px !important;
+}
+h1 {
+  text-align: center;
+}
+
+.card-content {
+  max-height: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.card-action {
+  background-color: #E6E6E6 !important;
+}
