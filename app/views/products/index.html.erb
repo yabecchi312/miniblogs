@@ -1,5 +1,6 @@
 <div class="contents row" >
   <div class="row">
+    <div class="container">
     <h1>Blog一覧</h1>
     <%= search_form_for @search do |f| %>
       <%= f.label :title, "タイトル名を含む" %>
@@ -7,8 +8,8 @@
       <div class="actions"><%= f.submit "検索" %></div>
     <% end %>
 
-    <div class="col s12 m6">
-      <div class="card light-blue lighten-2">
+    <div class="col s12 ">
+      <div class="card light-blue lighten-2 ">
         <% if @result.any? %>
           <%= render @result %>
         <% end %>
@@ -20,5 +21,6 @@
       </div>
     </div>
   </div>
+</div>>
  <%= paginate @products %>
 </div>
