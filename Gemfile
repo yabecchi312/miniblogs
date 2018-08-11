@@ -59,3 +59,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
   gem 'kaminari','~> 0.17.0'
   gem 'devise'
   gem 'ransack'
+  gem 'therubyracer', platforms: :ruby
+  gem 'rails_12factor', group: :production
